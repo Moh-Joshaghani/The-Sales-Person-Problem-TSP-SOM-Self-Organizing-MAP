@@ -17,7 +17,7 @@ To run, simply run the main.py file.
 ### output
 animation.gif sketches the progress of the algorithm and how the clusters change through iterations. 
 
-![Output](./animation.gif)
+![Output](./Python/animation.gif)
 
 
 
