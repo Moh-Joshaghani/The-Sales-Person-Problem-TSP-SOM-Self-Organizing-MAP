@@ -25,9 +25,15 @@ def gaussian(sgm, j, jstar, clus_num):
 
 
 #               CLASSES
+class animation:
+    def __init__(self):
+        pass
+
+# ==================================================================
 class TSP:
     def __init__(self,
                  city_count,
+                 cities_coordinates_list=None,
                  factor=2.4,
                  eta=0.2,
                  sigma_decay=0.015,
@@ -35,12 +41,17 @@ class TSP:
                  min_change_to_terminate=1e-5
                  ):
 
-        # the problem settings
-        self.city_count = city_count
+        # reading the cities name if given
+        if cities_coordinates_list is not None:
+            self.city_count = len(city_count)
+            self.cities = cities_coordinates_list
+        else:
+            self.city_count = city_count
+            self.cities = np.random.rand(self.city_count, 2)
+
         self.cluster_count = int(factor * city_count)
 
         # initializing cities and normalizing them
-        self.cities = np.random.rand(self.city_count, 2)
         self.cities[0, :] = (self.cities[0, :] - np.min(self.cities[0, :])) / (
                     np.max(self.cities[0, :]) - np.min(self.cities[0, :]))
         self.cities[1, :] = (self.cities[1, :] - np.min(self.cities[1, :])) / (
@@ -217,7 +228,8 @@ class TSP:
 
 # _____________________________________________________________________________________________________
 #                   TEST
-tsp = TSP(25)
-tsp.TSP_loop()
+if __name__ == '__main__':
+    tsp = TSP(25)
+    tsp.TSP_loop()
 
-a = 1
+    a = 1

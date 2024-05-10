@@ -1,5 +1,6 @@
 .idea
 .idea/*
+output/*
 venv
 __pycache__
 
