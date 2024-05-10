@@ -156,7 +156,7 @@ class TSP:
     def __init__(self,
                  city_count=None,
                  cities_coordinates_list=None,
-                 factor=2.4,
+                 factor=3,
                  eta=0.2,
                  sigma_decay=0.015,
                  max_iter=100,
