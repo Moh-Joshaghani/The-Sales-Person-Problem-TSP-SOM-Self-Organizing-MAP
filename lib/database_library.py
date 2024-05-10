@@ -25,9 +25,6 @@ class cities_db:
             with open(os.path.join('data', database_dir + ".sql"), 'r') as file:
                 sql_script = file.read()
 
-            # Split SQL script into individual commands
-            # sql_commands = re.split(r';\s*(?:--.*?$|/\*.*?\*/\s*)', sql_script, flags=re.MULTILINE)
-
             # Execute each SQL command
             for idx, sql_command in enumerate(sql_script.split(';')):
                 if sql_command.strip():
